@@ -3,6 +3,8 @@ DELKA_POLE = 20
 SYMBOL_HRACE = "x"
 SYMBOL_POCITACE = "o"
 
+POTREBA_K_VYHRE = 3
+
 
 def vyhodnot(pole):
     """
@@ -12,7 +14,14 @@ def vyhodnot(pole):
      řetězec "!", když dojde k remíze nebo
      řetězec "-", když je možné ještě pokračovat ve hře
     """
-    pass
+    if SYMBOL_HRACE * POTREBA_K_VYHRE in pole:
+        return "x"
+    elif SYMBOL_POCITACE * POTREBA_K_VYHRE in pole:
+        return "o"
+    elif "-" in pole:
+        return "-"
+    else:
+        return "!"
 
 
 def tah(pole, cislo_policka, symbol):
