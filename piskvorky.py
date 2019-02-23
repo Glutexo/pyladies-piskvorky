@@ -1,3 +1,6 @@
+from random import randrange
+
+
 DELKA_POLE = 20
 
 SYMBOL_HRACE = "x"
@@ -66,7 +69,11 @@ def tah_pocitace(pole):
     """
     Vrátí herní pole se zaznamenaným tahem počítače
     """
-    pass
+    while True:
+        cislo_policka = randrange(len(pole))
+        if pole[cislo_policka] != "-":  # Obsazené pole
+            continue
+        return tah(pole, cislo_policka, SYMBOL_POCITACE)
 
 
 def piskvorky1d():
@@ -74,7 +81,6 @@ def piskvorky1d():
     Hraje 1D piškvorky.
     """
     pass
-
 
 if __name__ == "__main__":
     piskvorky1d()
