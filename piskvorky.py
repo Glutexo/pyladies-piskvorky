@@ -28,7 +28,9 @@ def tah(pole, cislo_policka, symbol):
     """
     Vrátí herní pole s daným symbolem umístěným na danou pozici.
     """
-    pass
+    pred = pole[0:cislo_policka]
+    po = pole[cislo_policka+1:]
+    return pred + symbol + po
 
 
 def tah_hrace(pole):
